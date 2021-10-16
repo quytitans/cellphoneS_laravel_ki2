@@ -32,7 +32,7 @@ class ApartmentController extends Controller
         $apt->status = $request->get('status');
         $apt->save();
         return view ('admin.form');
-//        $eventController = new EventController();
-//        return $eventController->getAll();
+        $apartmentcontroller = new ApartmentController();
+        return $apartmentcontroller->getAll();
     }
 }

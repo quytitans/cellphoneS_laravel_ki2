@@ -3,7 +3,9 @@
 @section('title')
     <title>Form</title>
     <style>
-
+        .mainMenu{
+            vertical-align: middle
+        }
     </style>
 @endsection
 
