@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ApartmentRequest extends FormRequest
+class MobileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,16 @@ class ApartmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:10|max:50',
-            'address' => 'required',
-            'price' => 'numeric',
-            'information' => 'required',
-            'informationDetail' => 'required',
-            'thumbnail' => 'url',
-            'status' => 'required|min:1|max:3',
+            'name'=>'required',
+            'thumbnail'=>'required',
+            'brandID '=>'required',
+            'price'=>'required',
+            'typeID '=>'required',
+            'ramID '=>'required',
+            'cpu'=>'required',
+            'ssdID '=>'required',
+            'screenID '=>'required',
+            'status'=>'required'
         ];
     }
 }

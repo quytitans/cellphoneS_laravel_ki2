@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\ApartmentController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', [ApartmentController::class, 'getHomePage']);
-Route::get('/create', [ApartmentController::class, 'getForm']);
-Route::post('/create', [ApartmentController::class, 'createApartment']);
-Route::get('/apartments', [ApartmentController::class, 'getAll']);
+Route::get('/create/mobile', [adminController::class, 'getFormCreate']);
+Route::post('/create/mobile', [adminController::class, 'saveFormCreate']);
+
+//Route::get('/mobiles/brand/{brandID}', [adminController::class, 'getMobilesFilterByBrand']);
+//Route::get('/search', [adminController::class, 'liveSearch']);
+
+Route::get('/mobiles', [adminController::class, 'getAllProductMobile']);
+//Route::post('/mobiles', [adminController::class, 'filterAll']);
+Route::post('/mobiles/search', [adminController::class, 'filterAllAjax']);
