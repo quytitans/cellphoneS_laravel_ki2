@@ -14,60 +14,20 @@
         <div class="nano-content" tabindex="0" style="right: -17px;">
             <nav id="menu" class="nav-main" role="navigation">
                 <ul class="nav nav-main">
-                    <li class="nav-parent">
-                        <a>
-                            <i class="fa fa-list-alt" aria-hidden="true"></i>
-                            <span>Forms</span>
-                        </a>
-                        <ul class="nav nav-children" style="">
-                            <li>
-                                <a href="forms-basic.html">
-                                    Basic
-                                </a>
-                            </li>
-                            <li class="nav-active">
-                                <a href="forms-advanced.html">
-                                    Advanced
-                                </a>
-                            </li>
-                            <li>
-                                <a href="forms-validation.html">
-                                    Validation
-                                </a>
-                            </li>
-                            <li>
-                                <a href="forms-layouts.html">
-                                    Layouts
-                                </a>
-                            </li>
-                            <li>
-                                <a href="forms-wizard.html">
-                                    Wizard
-                                </a>
-                            </li>
-                            <li>
-                                <a href="forms-code-editor.html">
-                                    Code Editor
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav nav-main">
                     {{--                    <li class="nav-parent nav-active nav-expanded">--}}
-                    <li class="nav-parent">
+                    <li class="nav-parent {{ request()->is('mobiles*') ? 'nav-expanded' : '' }}">
                         <a>
                             <i class="fa fa-list-alt" aria-hidden="true"></i>
                             <span>Mobile</span>
                         </a>
                         <ul class="nav nav-children" style="">
-                            <li>
-                                <a href="/create/mobile">
+                            <li class="{{ request()->is('mobiles/create') ? 'nav-active' : '' }}">
+                                <a href="/mobiles/create">
                                     Create new mobile
                                 </a>
                             </li>
-                            <li class="nav-active">
-                                <a href="/mobiles">
+                            <li class="{{ request()->is('mobiles/all') ? 'nav-active' : '' }}">
+                                <a href="/mobiles/all">
                                     Show all product
                                 </a>
                             </li>

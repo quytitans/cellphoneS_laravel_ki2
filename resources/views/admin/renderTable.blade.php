@@ -15,6 +15,7 @@
             <th>created_at</th>
             <th>updated_at</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -49,6 +50,11 @@
                     @if($item->status == 4)
                         Nhận Pre-Order
                     @endif
+                </td>
+                <td>
+                    <a href="/mobiles/detail?id={{$item['id']}}" ><i class="fa fa-info m2"></i> Info</a>
+                    <a href="/mobiles/edit?id={{$item['id']}}" ><i class="fa fa-pencil">  </i> Edit</a>
+                    <a href="/mobiles/delete?id={{$item['id']}}" class="on-default ">  <i class="fa fa-trash-o"></i> Delete</a>
                 </td>
             </tr>
         @endforeach

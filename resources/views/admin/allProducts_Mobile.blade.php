@@ -71,6 +71,20 @@
         </div>
     </form>
     {{--    trien khai thong tin tra ve--}}
+
+{{--    flash message when save new product--}}
+    @if(\Illuminate\Support\Facades\Session::has('message'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <strong>Well done!</strong> {{\Illuminate\Support\Facades\Session::get('message')}} <a href="" class="alert-link">Click X to close this window</a>.
+        </div>
+    @endif
+    @if(\Illuminate\Support\Facades\Session::has('messageFalse'))
+        <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <strong>Oh my god!</strong> {{\Illuminate\Support\Facades\Session::get('messageFalse')}} <a href="" class="alert-link">Please try again</a> Click X to close this window
+        </div>
+    @endif
     <div id="data_table">
         @include('admin.renderTable')
     </div>
@@ -97,7 +111,7 @@
                 fetch_data(page);
             })
 
-             function fetch_data(page) {
+            function fetch_data(page) {
                 $.ajax({
                     url: '/mobiles/fetch_data?page=' + page,
                     data: $('#formSubmit').serialize(),
