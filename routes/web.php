@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\PaginationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/mobiles', [PaginationController::class, 'index']);
+Route::get('/mobiles/search', [PaginationController::class, 'filterAllAjax']);
+Route::get('/mobiles/fetch_data', [PaginationController::class, 'fetch_data']);
 
-Route::get('/create/mobile', [adminController::class, 'getFormCreate']);
-Route::post('/create/mobile', [adminController::class, 'saveFormCreate']);
 
-//Route::get('/mobiles/brand/{brandID}', [adminController::class, 'getMobilesFilterByBrand']);
-//Route::get('/search', [adminController::class, 'liveSearch']);
-
-Route::get('/mobiles', [adminController::class, 'getAllProductMobile']);
-//Route::post('/mobiles', [adminController::class, 'filterAll']);
-Route::post('/mobiles/search', [adminController::class, 'filterAllAjax']);
