@@ -1,4 +1,7 @@
 @extends('frontend.layout')
+@section('titleMain')
+    <title>CellPhoneXSMAX - HOME</title>
+@endsection
 @section('content')
     <div class="features_items"><!--features_items-->
         <h2 class="title text-center">Sản phẩm mới nhất</h2>
@@ -8,9 +11,9 @@
                     <a href="">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img
-                                    src="{{$mobile->mainThumbnail}}"
-                                    alt=""/>
+                                <a href="/detail?id={{$mobile->id}}"><img
+                                        src="{{$mobile->mainThumbnail}}"
+                                        alt=""/></a>
                                 <h2>{{$mobile->price}} USD</h2>
                                 <p>{{$mobile->name}}</p>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm

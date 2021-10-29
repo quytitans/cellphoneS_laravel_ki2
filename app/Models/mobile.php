@@ -32,6 +32,23 @@ class mobile extends Model
         return [];
     }
 
+    public function getStrStatusAttribute(){
+        $strStatus = '';
+        if($this->status ==1){
+            $strStatus = 'Hàng sắp về';
+        }
+        if($this->status ==2){
+            $strStatus = 'Còn hàng';
+        }
+        if($this->status ==3){
+            $strStatus = 'Hết hàng';
+        }
+        if($this->status ==4){
+            $strStatus = 'Nhận pre-oder';
+        }
+        return $strStatus;
+    }
+
     public function brandName(){
         return $this->belongsTo(brand::class, 'brandID', 'id');
     }

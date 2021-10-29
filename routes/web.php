@@ -1,23 +1,10 @@
 <?php
 
-use App\Http\Controllers\adminController;
-use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\frontEndController;
 use App\Http\Controllers\PaginationController;
-use App\Http\Controllers\testController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
+//back end
 Route::get('/mobiles/create', [PaginationController::class, 'getFormCreate']);
 Route::post('/mobiles/create', [PaginationController::class, 'saveFormCreate']);
 
@@ -33,7 +20,7 @@ Route::get('/mobiles/all', [PaginationController::class, 'index']);
 Route::get('/mobiles/search', [PaginationController::class, 'filterAllAjax']);
 Route::get('/mobiles/fetch_data', [PaginationController::class, 'fetch_data']);
 
-
-//test
-Route::get('/home', [testController::class, 'getLayout']);
+//front end
+Route::get('/home', [frontEndController::class, 'getLayout']);
+Route::get('/detail', [frontEndController::class, 'getDetailPage']);
 
