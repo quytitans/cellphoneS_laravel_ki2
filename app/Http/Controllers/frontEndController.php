@@ -26,4 +26,11 @@ class frontEndController extends Controller
             'item'=>$mobile
         ]);
     }
+
+    public function getCartPage(){
+        $brands = brand::all();
+        return view('frontend.cart', [
+            'brands' => $brands
+        ]);
+    }
 }

@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     @yield('titleMain')
+    <title>Home | E-Shopper</title>
     <link href="{{asset('/frontend/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/frontend/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('/frontend/css/prettyPhoto.css')}}" rel="stylesheet">
