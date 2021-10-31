@@ -23,6 +23,7 @@ Route::get('/mobiles/fetch_data', [PaginationController::class, 'fetch_data']);
 
 //front end
 Route::get('/home', [frontEndController::class, 'getLayout']);
+Route::get('/home/brand', [frontEndController::class, 'getHomeBrand']);
 Route::get('/detail', [frontEndController::class, 'getDetailPage']);
 Route::get('/cart', [frontEndController::class, 'getCartPage']);
 

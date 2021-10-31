@@ -111,7 +111,7 @@
                             ?>
 
 
-                            <li><a href="{{URL::to('/show-cart')}}"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a>
+                            <li><a href="/cart/show"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a>
                             </li>
                             <?php
                             $customer_id = Session::get('customer_id');
@@ -149,17 +149,19 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{URL::to('/trang-chu')}}" class="active">Trang chủ</a></li>
+                            <li><a href="/home" class="active">Trang chủ</a></li>
                             <li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
-
+                                    @foreach($brands as $brand)
+                                        <li><a href="/home/brand?brandid={{$brand->id}}"> <span
+                                                    class="pull-right"></span>{{$brand->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#">Tin tức<i class="fa fa-angle-down"></i></a>
 
                             </li>
-                            <li><a href="{{URL::to('/show-cart')}}">Giỏ hàng</a></li>
+                            <li><a href="/cart/show">Giỏ hàng</a></li>
                             <li><a href="contact-us.html">Liên hệ</a></li>
                         </ul>
                     </div>
@@ -168,7 +170,7 @@
                     <form action="{{URL::to('/tim-kiem')}}" method="POST">
                         {{csrf_field()}}
                         <div class="search_box pull-right">
-                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm"/>
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm">
                             <input type="submit" style="margin-top:0;color:#666" name="search_items"
                                    class="btn btn-primary btn-sm" value="Tìm kiếm">
                         </div>
@@ -200,7 +202,9 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="https://res.cloudinary.com/quynv300192/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634801624/jgxl4rqjcu2fegfiwupp.jpg" class="girl img-responsive" alt=""/>
+                                <img
+                                    src="https://res.cloudinary.com/quynv300192/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634801624/jgxl4rqjcu2fegfiwupp.jpg"
+                                    class="girl img-responsive" alt=""/>
                                 <img src="{{('/frontend/images/pricing.png')}}" class="pricing" alt=""/>
                             </div>
                         </div>
@@ -213,7 +217,9 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="https://res.cloudinary.com/quynv300192/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634801624/jgxl4rqjcu2fegfiwupp.jpg" class="girl img-responsive" alt=""/>
+                                <img
+                                    src="https://res.cloudinary.com/quynv300192/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634801624/jgxl4rqjcu2fegfiwupp.jpg"
+                                    class="girl img-responsive" alt=""/>
                                 <img src="{{('/frontend/images/pricing.png')}}" class="pricing" alt=""/>
                             </div>
                         </div>
@@ -227,7 +233,9 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="https://res.cloudinary.com/quynv300192/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634801624/jgxl4rqjcu2fegfiwupp.jpg" class="girl img-responsive" alt=""/>
+                                <img
+                                    src="https://res.cloudinary.com/quynv300192/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1634801624/jgxl4rqjcu2fegfiwupp.jpg"
+                                    class="girl img-responsive" alt=""/>
                                 <img src="{{('/frontend/images/pricing.png')}}" class="pricing" alt=""/>
                             </div>
                         </div>
@@ -277,7 +285,7 @@
                         <div class="brands-name">
                             <ul class="nav nav-pills nav-stacked">
                                 @foreach($brands as $brand)
-                                    <li><a href="{{URL::to('/thuong-hieu-san-pham/')}}"> <span
+                                    <li><a href="/home/brand?brandid={{$brand->id}}"> <span
                                                 class="pull-right"></span>{{$brand->name}}</a></li>
                                 @endforeach
                             </ul>

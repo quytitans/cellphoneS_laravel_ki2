@@ -23,11 +23,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @php
-                        $totalPrice = 0;
-                    @endphp
+                    <?php
+                    $totalPrice = 0;
+                    ?>
                     @foreach ($shoppingCart as $item)
-
+                        <?php
+                        if (isset($item)) {
+                            $totalPrice += $item->price * $item->quantity;
+                        }
+                        ?>
                         <tr>
                             <td class="col-md-6">
                                 <div class="media">
