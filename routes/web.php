@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\frontEndController;
 use App\Http\Controllers\PaginationController;
+use App\Http\Controllers\shoppingCartController;
 use Illuminate\Support\Facades\Route;
 
 //back end
@@ -24,4 +25,12 @@ Route::get('/mobiles/fetch_data', [PaginationController::class, 'fetch_data']);
 Route::get('/home', [frontEndController::class, 'getLayout']);
 Route::get('/detail', [frontEndController::class, 'getDetailPage']);
 Route::get('/cart', [frontEndController::class, 'getCartPage']);
+
+//shopingcart
+Route::get('/errors404', [shoppingCartController::class, 'getErrorPage']);
+Route::get('/cart/show', [shoppingCartController::class, 'show']);
+Route::post('/cart/add', [shoppingCartController::class, 'add']);
+Route::post('/cart/update', [shoppingCartController::class, 'update']);
+Route::post('/cart/remove', [shoppingCartController::class, 'remove']);
+
 

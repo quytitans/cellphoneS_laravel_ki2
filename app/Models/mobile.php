@@ -50,7 +50,8 @@ class mobile extends Model
     }
 
     public function brandName(){
-        return $this->belongsTo(brand::class, 'brandID', 'id');
+//        return $this->belongsTo(brand::class, 'brandID', 'id');
+        return $this->hasOne(brand::class,['brandID','id']);
     }
 
     //local scope, filter

@@ -8,7 +8,8 @@
         @foreach($mobiles as $mobile)
             <div class="col-sm-4">
                 <div class="product-image-wrapper">
-                    <a href="">
+                    <form action="/cart/add?id={{$mobile->id}}&quantity=1" method="POST">
+                        @csrf
                         <div class="single-products">
                             <div class="productinfo text-center">
                                 <a href="/detail?id={{$mobile->id}}"><img
@@ -16,13 +17,12 @@
                                         alt=""/></a>
                                 <h2>{{$mobile->price}} USD</h2>
                                 <p>{{$mobile->name}}</p>
-                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm
-                                    giỏ
-                                    hàng</a>
+                                <a href="#" class="btn btn-default add-to-cart">
+                                    <button type="submit" class="fa fa-shopping-cart ">Thêm giỏ hàng</button>
+                                </a>
                             </div>
-
                         </div>
-                    </a>
+                    </form>
                     <div class="choose">
                         <ul class="nav nav-pills nav-justified">
                             <li><a href="#"><i class="fa fa-plus-square"></i>Yêu thích</a></li>

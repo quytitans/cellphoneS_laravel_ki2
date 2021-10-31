@@ -20,19 +20,17 @@
                 <p>Mã ID: {{$item->id}}</p>
                 <img src="images/product-details/rating.png" alt=""/>
 
-                <form action="{{URL::to('/save-cart')}}" method="POST">
+                <form action="/cart/add?id={{$item->id}}" method="POST">
                     {{ csrf_field() }}
                     <span>
 									<span>{{$item->price}} USD</span>
 
 									<label>Số lượng:</label>
-									<input name="qty" type="number" min="1" value="1"/>
-									<input name="productid_hidden" type="hidden" value=""/>
+									<input name="quantity" type="number" min="1" value="1"/>
 									<button type="submit" class="btn btn-fefault cart">
 										<i class="fa fa-shopping-cart"></i>
 										Thêm giỏ hàng
 									</button>
-
 								</span>
                 </form>
 
