@@ -167,10 +167,10 @@
                     </div>
                 </div>
                 <div class="col-sm-5">
-                    <form action="{{URL::to('/tim-kiem')}}" method="POST">
-                        {{csrf_field()}}
+                    <form action="/home/search" method="POST">
+                        @csrf
                         <div class="search_box pull-right">
-                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm">
+                            <input type="text" name="keyword" placeholder="Tìm kiếm">
                             <input type="submit" style="margin-top:0;color:#666" name="search_items"
                                    class="btn btn-primary btn-sm" value="Tìm kiếm">
                         </div>
@@ -259,27 +259,6 @@
         <div class="row">
             <div class="col-sm-3">
                 <div class="left-sidebar">
-                    <h2>Danh mục sản phẩm</h2>
-                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a>Điện thoại di động</a>
-                                </h4>
-                            </div>
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a>Điện thoại không di động</a>
-                                </h4>
-                            </div>
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a>Điện thoại rất di động</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="brands_products">
                         <h2>Thương hiệu sản phẩm</h2>
                         <div class="brands-name">
@@ -293,7 +272,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-sm-9 padding-right">
 
                 @yield('content')

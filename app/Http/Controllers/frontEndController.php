@@ -18,11 +18,22 @@ class frontEndController extends Controller
         ]);
     }
 
+    public function findByName(Request $request)
+    {
+        $name = $request->get('keyword');
+        $brands = brand::all();
+        $mobiles = mobile::where('name', 'like', '%' . $name . '%')->get();
+        return view('frontend.home', [
+            'brands' => $brands,
+            'mobiles' => $mobiles
+        ]);
+    }
+
     public function getHomeBrand(Request $request)
     {
         $brandID = $request->get('brandid');
         $brands = brand::all();
-        $mobiles = mobile::where('brandID', '=', $brandID)->orderBy('updated_at', 'DESC')->paginate(9);
+        $mobiles = mobile::where('brandID', '=', $brandID)->orderBy('updated_at', 'DESC')->get();
         return view('frontend.home', [
             'brands' => $brands,
             'mobiles' => $mobiles
@@ -37,14 +48,6 @@ class frontEndController extends Controller
         return view('frontend.mobilesDetail', [
             'brands' => $brands,
             'item' => $mobile
-        ]);
-    }
-
-    public function getCartPage()
-    {
-        $brands = brand::all();
-        return view('frontend.cart', [
-            'brands' => $brands
         ]);
     }
 }
