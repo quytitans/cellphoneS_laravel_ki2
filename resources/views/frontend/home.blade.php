@@ -16,7 +16,8 @@
                                         src="{{$mobile->mainThumbnail}}"
                                         alt=""/></a>
                                 <h2>{{$mobile->formatPrice}} USD</h2>
-                                <p>{{$mobile->name}}</p>
+                                <p><strong>{{$mobile->name}}</strong></p>
+                                <p>{{$mobile->brandName->name}}</p>
                                 <a href="#" class="btn btn-default add-to-cart">
                                     <button type="submit" class="fa fa-shopping-cart ">Thêm giỏ hàng</button>
                                 </a>

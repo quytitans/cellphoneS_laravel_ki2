@@ -41,8 +41,8 @@ class PaginationController extends Controller
         } else {
             Session::flash('messageFalse', 'Action failed !!!');
         }
-        $adminController = new PaginationController();
-        return $adminController->index();
+        $paginateController = new PaginationController();
+        return $paginateController->index();
     }
     //getdetail
     public function getDetail(Request $request){

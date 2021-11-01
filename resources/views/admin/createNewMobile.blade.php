@@ -12,7 +12,7 @@
 
 @section('content')
     <div class="col-md-12">
-        <form name="register-form" action="/create/mobile" method="post">
+        <form name="register-form" action="/mobiles/create" method="post">
             @csrf
             <section class="panel">
                 <header class="panel-heading">
@@ -161,7 +161,7 @@
                 </div>
                 <footer class="panel-footer">
                     <button type="submit" class="btn btn-info btn-fill">Submit</button>
-                    <a href="/home">
+                    <a href="/mobiles/all">
                         <button type="button" class="btn btn-danger pull-right">Cancel</button>
                     </a>
                 </footer>
