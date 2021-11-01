@@ -6,6 +6,17 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        .btnEnd{
+            margin-top: 20px;
+        }
+        .btnEnd button{
+            padding-left: 10px;
+        }
+        .btnEnd button[type=submit]{
+            background-color:paleturquoise;
+        }
+    </style>
     <!------ Include the above in your HEAD tag ---------->
     {{--thong tin gio hang--}}
     <div class="container">
@@ -89,22 +100,6 @@
                         <td><h3>Total</h3></td>
                         <td class="text-right"><h3><strong>{{$totalPrice}} USD</strong></h3></td>
                     </tr>
-                    <tr>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>
-                            <button type="button" class="btn btn-default">
-                                <a href="/home"><span class="glyphicon glyphicon-shopping-cart"></span> Continue
-                                    Shopping</a>
-                            </button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success">
-                                Checkout <span class="glyphicon glyphicon-play"></span>
-                            </button>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
                 {{--                thong tin gui don hang--}}
@@ -112,16 +107,28 @@
                     <div class="row">
                         <div class="col-sm-12 clearfix">
                             <div class="bill-to">
-                                <p>Điền thông tin gửi hàng</p>
                                 <div class="form-one">
-                                    <form action="{{URL::to('/save-checkout-customer')}}" method="POST">
-                                        {{csrf_field()}}
-                                        <input type="text" name="shipping_email" placeholder="Email">
-                                        <input type="text" name="shipping_name" placeholder="Họ và tên">
-                                        <input type="text" name="shipping_address" placeholder="Địa chỉ">
-                                        <input type="text" name="shipping_phone" placeholder="Phone">
-                                        <textarea name="shipping_notes" placeholder="Ghi chú đơn hàng của bạn"
+                                    <form action="/oder/process" method="post">
+                                        @csrf
+                                        <input type="text" name="shipEmail" placeholder="Email">
+                                        <input type="text" name="shipName" placeholder="Họ và tên">
+                                        <input type="text" name="shipAddress" placeholder="Địa chỉ">
+                                        <input type="text" name="shipPhone" placeholder="Phone">
+                                        <textarea name="shipNote" placeholder="Ghi chú đơn hàng của bạn"
                                                   rows="16"></textarea>
+                                        <div class="btnEnd">
+                                            <button type="button" class="btn btn-default">
+                                                <a href="/home"><span class="glyphicon glyphicon-shopping-cart"></span>
+                                                    Continue
+                                                    Shopping</a>
+                                            </button>
+                                            <button type="button" class="btn btn-success">
+                                                Checkout <span class="glyphicon glyphicon-play"></span>
+                                            </button>
+                                            <button type="submit" class="btn btn-default">
+                                                Submit Order <span class="glyphicon glyphicon-play"></span>
+                                            </button>
+                                        </div>
                                     </form>
                                     <br>
                                 </div>

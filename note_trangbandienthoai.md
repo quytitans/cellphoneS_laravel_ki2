@@ -26,6 +26,8 @@
 + string: note
 
 
+git push quytitans2 master
+
 
 - Mobile:
 + integer: id

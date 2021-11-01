@@ -14,15 +14,17 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->unsignedBigInteger('userID');
             $table->double('totalPrice');
+            $table->string('shipEmail');
             $table->string('shipName');
             $table->string('shipPhone');
             $table->string('shipAddress');
             $table->string('shipNote');
             $table->timestamps();
-            $table->unsignedInteger('status');
+            $table->boolean('checkOut'); //1 thanh toan roi, 0 chua thang toan
+            $table->unsignedInteger('status'); //1 done, 2 waiting to confirm, 3 processing, 4 cancel, -1 deleted
         });
     }
 

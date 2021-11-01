@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\frontEndController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\shoppingCartController;
 use Illuminate\Support\Facades\Route;
@@ -35,4 +36,5 @@ Route::post('/cart/add', [shoppingCartController::class, 'add']);
 Route::post('/cart/update', [shoppingCartController::class, 'update']);
 Route::post('/cart/remove', [shoppingCartController::class, 'remove']);
 
-
+//process Order
+Route::post('/oder/process', [OrderController::class, 'process']);
