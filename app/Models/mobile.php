@@ -32,6 +32,10 @@ class mobile extends Model
         return [];
     }
 
+    public function getFormatPriceAttribute(){
+        return number_format($this->price, 0, ',', ' ');
+    }
+
     public function getStrStatusAttribute(){
         $strStatus = '';
         if($this->status ==1){
@@ -50,8 +54,7 @@ class mobile extends Model
     }
 
     public function brandName(){
-//        return $this->belongsTo(brand::class, 'brandID', 'id');
-        return $this->hasOne(brand::class,['brandID','id']);
+        return $this->belongsTo(brand::class, 'brandID', 'id');
     }
 
     //local scope, filter

@@ -73,7 +73,7 @@ class shoppingCartController extends Controller
             $cartItem = new stdClass();
             $cartItem->id = $obj->id;
             $cartItem->name = $obj->name;
-            $cartItem->brand = $obj->brandID;
+            $cartItem->brand = $obj->brandName->name;
             $cartItem->thumbnail = $obj->mainThumbnail;
             $cartItem->price = $obj->price;
             $cartItem->quantity = $itemQuantity;
@@ -122,9 +122,9 @@ class shoppingCartController extends Controller
             $cartItem = new stdClass();
             $cartItem->id = $obj->id;
             $cartItem->name = $obj->name;
-            $cartItem->brand = $obj->brandID;
+            $cartItem->brand = $obj->brandName->name;
             $cartItem->thumbnail = $obj->mainThumbnail;
-            $cartItem->price = $obj->price;
+            $cartItem->price = $obj->formatPrice;
             $cartItem->quantity = $itemQuantity;
             $shoppingCart[$itemID] = $cartItem;
         }

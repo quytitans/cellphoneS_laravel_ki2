@@ -15,7 +15,7 @@
                                 <a href="/detail?id={{$mobile->id}}"><img
                                         src="{{$mobile->mainThumbnail}}"
                                         alt=""/></a>
-                                <h2>{{$mobile->price}} USD</h2>
+                                <h2>{{$mobile->formatPrice}} USD</h2>
                                 <p>{{$mobile->name}}</p>
                                 <a href="#" class="btn btn-default add-to-cart">
                                     <button type="submit" class="fa fa-shopping-cart ">Thêm giỏ hàng</button>
