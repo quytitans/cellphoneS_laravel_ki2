@@ -33,7 +33,7 @@ class frontEndController extends Controller
     {
         $brandID = $request->get('brandid');
         $brands = brand::all();
-        $mobiles = mobile::where('brandID', '=', $brandID)->orderBy('updated_at', 'DESC')->get();
+        $mobiles = mobile::where('brandID', '=', $brandID)->orderBy('updated_at', 'DESC')->paginate(9);
         return view('frontend.home', [
             'brands' => $brands,
             'mobiles' => $mobiles

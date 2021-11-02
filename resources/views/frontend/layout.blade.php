@@ -25,8 +25,20 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6180dc41f7c0440a59210d32/1fjfloo26';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
 <body>
-
 <header id="header"><!--header-->
     <div class="header_top"><!--header_top-->
         <div class="container">
@@ -150,7 +162,7 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="/home" class="active">Trang chủ</a></li>
-                            <li class="dropdown"><a href="#">Sản phẩm<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="/home">Sản phẩm<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     @foreach($brands as $brand)
                                         <li><a href="/home/brand?brandid={{$brand->id}}"> <span
@@ -448,5 +460,7 @@
 <script src="{{asset('/frontend/js/price-range.js')}}"></script>
 <script src="{{asset('/frontend/js/jquery.prettyPhoto.js')}}"></script>
 <script src="{{asset('/frontend/js/main.js')}}"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6180dd5c61f84693"></script>
 </body>
 </html>

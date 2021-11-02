@@ -33,5 +33,7 @@
                 </div>
             </div>
         @endforeach
+        @include('frontend.pagination')
     </div>
+
 @endsection

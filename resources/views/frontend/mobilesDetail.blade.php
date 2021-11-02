@@ -128,4 +128,7 @@
             </a>
         </div>
     </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0" nonce="P5EUx7PI"></script>
+    <div class="fb-comments" data-href="http://127.0.0.1:8000/detail?id={{$item->id}}" data-width="" data-numposts="5"></div>
 @endsection

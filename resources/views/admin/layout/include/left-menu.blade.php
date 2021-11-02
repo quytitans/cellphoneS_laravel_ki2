@@ -14,6 +14,9 @@
         <div class="nano-content" tabindex="0" style="right: -17px;">
             <nav id="menu" class="nav-main" role="navigation">
                 <ul class="nav nav-main">
+                    <li><a href="/home"><button>Move to User Home Page</button></a></li>
+                </ul>
+                <ul class="nav nav-main">
                     {{--                    <li class="nav-parent nav-active nav-expanded">--}}
                     <li class="nav-parent {{ request()->is('mobiles*') ? 'nav-expanded' : '' }}">
                         <a>
